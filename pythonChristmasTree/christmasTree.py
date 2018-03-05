@@ -1,4 +1,4 @@
-from colorama import Fore, Back, Style
+from colorama import Fore
 import random
 
 treeHeight = input("Quanto deve essere alto l'albero?")
