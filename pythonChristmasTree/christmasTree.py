@@ -1,4 +1,4 @@
-
+from colorama import Fore, Back, Style
 
 treeHeight = input("Quanto deve essere alto l'albero?")
 
@@ -17,7 +17,7 @@ for i in range(0, treeHeight):
     for j in range (0, whiteSpaces):
         print " ",
     for j in range (0, stars):
-        print "*",
+        print Fore.GREEN + "*",
     for j in range (0, whiteSpaces):
         print " ",
     
@@ -37,7 +37,7 @@ for i in range(0, baseHeight):
     for j in range(0, (maxTreeWidth - baseWidth) / 2):
         print " ",
     for j in range(0, baseWidth):
-        print "*",
+        print Fore.YELLOW + "*",
     for j in range(0, (maxTreeWidth - baseWidth) / 2):
         print " ",
 
