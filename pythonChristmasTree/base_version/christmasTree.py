@@ -3,6 +3,10 @@ import random
 
 treeHeight = input("Quanto deve essere alto l'albero?")
 
+if not treeHeight.isdigit():
+    print "Devi inserire un numero maggiore o uguale a 2"
+    exit()
+
 if treeHeight < 2:
     print "L'albero deve essere alto almeno 2"
     exit()
