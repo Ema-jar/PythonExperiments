@@ -1,4 +1,5 @@
 from colorama import Fore, Back, Style
+import random
 
 treeHeight = input("Quanto deve essere alto l'albero?")
 
@@ -13,11 +14,21 @@ whiteSpaces = treeHeight
 # print tree
 for i in range(0, treeHeight):
     stars = maxTreeWidth - (whiteSpaces * 2)
-
+    prev = "green"
+    
     for j in range (0, whiteSpaces):
         print " ",
     for j in range (0, stars):
-        print Fore.GREEN + "*",
+        if(j != 0 and j != stars - 1):
+            if (random.randint(0,1) and prev != "red"):
+                print Fore.RED + "*",
+                prev = "red"
+            else:
+                print Fore.GREEN + "*",
+                prev = "green"
+        else:
+            print Fore.GREEN + "*",
+            prev = "green"
     for j in range (0, whiteSpaces):
         print " ",
     
