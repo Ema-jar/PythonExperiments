@@ -2,64 +2,77 @@ import random
 from colorama import Fore
 
 
-def tree_check(treeHeight):
-    if treeHeight < 2:
+def tree_check(tree_height):
+    if tree_height < 2:
         print "L'albero deve essere alto almeno 2"
         exit()
     return
 
-def print_tree(treeHeight):
+def print_tree(tree_height):
 
-    currentWidth = 0
-    maxTreeWidth = (treeHeight * 2) + 1
-    whiteSpaces = treeHeight
+    max_tree_width = (tree_height * 2) + 1
+    white_spaces = tree_height
 
-    # print tree
-    for i in range(0, treeHeight):
-        stars = maxTreeWidth - (whiteSpaces * 2)
-        prev = "green"
+    for i in range(0, tree_height):
+        stars = max_tree_width - (white_spaces * 2)
         
-        for j in range (0, whiteSpaces):
-            print " ",
-        for j in range (0, stars):
-            if(j != 0 and j != stars - 1):
-                if (random.randint(0,1) and prev != "red"):
-                    print Fore.RED + "*",
-                    prev = "red"
-                else:
-                    print Fore.GREEN + "*",
-                    prev = "green"
-            else:
-                print Fore.GREEN + "*",
-                prev = "green"
-        for j in range (0, whiteSpaces):
-            print " ",
+        print_spaces(white_spaces)
+        print_stars(stars)
+        print_spaces(white_spaces)
         
         print "\n"
-        whiteSpaces -= 1
+        white_spaces -= 1
     
     return
 
-def print_base(treeHeight):
+def print_base(tree_height):
     
-    maxTreeWidth = (treeHeight * 2) + 1
-    baseWidth = treeHeight / 3
+    max_tree_width = (tree_height * 2) + 1
+    base_width = tree_height / 3
+    base_height = 2
 
-    if baseWidth != 1:
-        baseWidth += 1
+    if base_width != 1:
+        base_width += 1
 
-    baseHeight = 2
-    whiteSpaces = treeHeight
+    for i in range(0, base_height):
 
-    for i in range(0, baseHeight):
-
-        for j in range(0, (maxTreeWidth - baseWidth) / 2):
+        for j in range(0, (max_tree_width - base_width) / 2):
             print " ",
-        for j in range(0, baseWidth):
+        for j in range(0, base_width):
             print Fore.YELLOW + "*",
-        for j in range(0, (maxTreeWidth - baseWidth) / 2):
+        for j in range(0, (max_tree_width - base_width) / 2):
             print " ",
 
         print "\n"
 
+    return
+
+def print_spaces(num_of_spaces):
+    for j in range (0, num_of_spaces):
+        print " ",
+    
+    return
+
+def print_stars(num_of_stars):
+    
+    for j in range (0, num_of_stars):
+            if(j != 0 and j != num_of_stars - 1):
+                print_internal()
+            else:
+                print_external()
+    
+    return
+
+def print_internal():
+    if (random.randint(0,1)):
+        print Fore.RED + "*",
+    else:
+        print Fore.GREEN + "*",
+
+    return
+
+def print_external():
+    print Fore.GREEN + "*",
+    prev = "green"
+    
     return
