@@ -1,0 +1,6 @@
+{
+    "python.linting.pylintArgs":
+   [
+        "–disable-msg=E1601"
+   ]
+}
