@@ -1,7 +1,7 @@
 from treeFunctions import *
 
-treeHeight = int(input("Quanto deve essere alto l'albero?"))
+tree_height = int(input("Quanto deve essere alto l'albero?"))
 
-tree_check(treeHeight)
-print_tree(treeHeight)
-print_base(treeHeight)
+tree_check(tree_height)
+print_tree(tree_height)
+print_base(tree_height)
