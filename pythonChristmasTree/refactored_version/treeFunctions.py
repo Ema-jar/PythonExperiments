@@ -5,7 +5,7 @@ from colorama import Fore
 def tree_check(treeHeight):
     if treeHeight < 2:
         print "L'albero deve essere alto almeno 2"
-    exit()
+        exit()
     return
 
 def print_tree(treeHeight):
