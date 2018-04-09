@@ -1,9 +1,9 @@
 from colorama import Fore
 import random
 
-treeHeight = input("Quanto deve essere alto l'albero?")
+treeHeight = int(input("Quanto deve essere alto l'albero?"))
 
-if not treeHeight.isdigit():
+if treeHeight < 2:
     print "Devi inserire un numero maggiore o uguale a 2"
     exit()
 
